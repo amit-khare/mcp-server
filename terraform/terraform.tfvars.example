@@ -1,0 +1,34 @@
+# AWS Configuration
+aws_region  = "us-east-1"
+project_name = "mcp-server"
+app_env     = "app_env"
+
+# VPC Configuration (update with your VPC details)
+vpc_id              = "vpc-xxxxxxxxx"
+private_subnet_ids  = ["subnet-xxxxxxxx", "subnet-yyyyyyyy"]
+allowed_cidr_blocks = ["10.0.0.0/8"]
+
+# ECS Configuration
+task_cpu         = "256"
+task_memory      = "512"
+container_port   = 8000
+desired_count    = 1
+assign_public_ip = false
+
+# Logging
+log_retention_days = 7
+
+# Secrets (DO NOT commit actual values, use terraform.tfvars and add to .gitignore)
+cognito_region       = "aws_region"
+user_pool_id         = "aws_region_XXXXX"
+app_client_id        = "TBD"
+oauth_client_id      = "your-oauth-client-id"
+oauth_client_secret  = "your-oauth-client-secret"
+token_url            = "token_url"
+
+# Tags
+tags = {
+  Project     = "mcp-server"
+  Environment = "app_env"
+  ManagedBy   = "Terraform"
+}

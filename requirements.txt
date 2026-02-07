@@ -1,0 +1,4 @@
+fastmcp
+python-jose[cryptography]
+httpx
+pydantic-settings
